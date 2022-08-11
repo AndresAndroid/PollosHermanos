@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "nombre": "Pepsi",
+        "precio": 12,
+        "descripcion": "Soda refrescante sabor cola azul"
+    },
+    {
+        "id": 2,
+        "nombre": "Coca Cola",
+        "precio": 13,
+        "descripcion": "Soda mas rica que la de color azul"
+    },
+    {
+        "id": 3,
+        "nombre": "Agua de Jamaica",
+        "precio": 10,
+        "descripcion": "Agua natural infucionada con jamaica"
+    },
+    {
+        "id": 4,
+        "nombre": "Agua de Horchata",
+        "precio": 9,
+        "descripcion": "Agua muy rica mas no mas rica que la de limon"
+    },
+    {
+        "id": 5,
+        "nombre": "Pollo Rostizado",
+        "precio": 85,
+        "descripcion": "Pollo rico y rostizado"
+    },
+    {
+        "id": 6,
+        "nombre": "Pollo azado",
+        "precio": 90,
+        "descripcion": "Pollo ahumado con carbon de mezquite"
+    },
+    {
+        "id": 7,
+        "nombre": "Tortilas",
+        "precio": 22,
+        "descripcion": "Tortillas bajas en grasas"
+    },
+    {
+        "id": 8,
+        "nombre": "Arroz Blanco",
+        "precio": 15,
+        "descripcion": ""
+    },
+    {
+        "id": 9,
+        "nombre": "Arroz Rojo",
+        "precio": 15,
+        "descripcion": ""
+    },
+    {
+        "id": 10,
+        "nombre": "Papas Gajo",
+        "precio": 20,
+        "descripcion": ""
+    },
+    {
+        "id": 11,
+        "nombre": "Taquitos Dorados",
+        "precio": 4,
+        "descripcion": ""
+    },
+    {
+        "id": 12,
+        "nombre": "Nuggets",
+        "precio": 10,
+        "descripcion": ""
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+    "id":1,
+    "nombre":"Juan Perez",
+    "edad":"24",
+    "fechaNacimiento":"1997-11-07",
+    "email":"juan@hotmail.com",
+    "sexo":"90",
+    "actividad":"Mesero"
+    },
+    {
+    "id":2,
+    "nombre":"Pedro Paramo",
+    "edad":"34",
+    "fechaNacimiento":"1987-05-10",
+    "email":"pedro@hotmail.com",
+    "sexo":"65",
+    "actividad":"Jefe de meseros"
+    },
+    {
+    "id":3,
+    "nombre":"Adolfo Sanchez",
+    "edad":"46",
+    "fechaNacimiento":"1975-09-07",
+    "email":"adolfo@hotmail.com",
+    "sexo":"100",
+    "actividad":"Mesero"
+    },
+    {
+    "id":4,
+    "nombre":"Gabriel Gomez",
+    "edad":"51",
+    "fechaNacimiento":"1969-11-11",
+    "email":"gabriel@hotmail.com",
+    "sexo":"60",
+    "actividad":"Cocinero"
+    },
+    {
+    "id":5,
+    "nombre":"Luis Ortiz",
+    "edad":"63",
+    "fechaNacimiento":"1957",
+    "email":"luis@hotmail.com",
+    "sexo":"71",
+    "actividad":"Recepcionista"
+    }
+    ]

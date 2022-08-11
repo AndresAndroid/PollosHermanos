@@ -1,0 +1,59 @@
+[
+    {
+        
+        "id" : 1,
+        "nombre" : "Andres Valladares",
+        "fechaNacimiento" : "1995-12-18",
+        "email" : "andres@correo.example.com"
+    },
+    {
+        
+        "id" : 2,
+        "nombre" : "Pedro Gonzalez",
+        "fechaNacimiento" : "2000-11-18",
+        "email" : "ellocodelbarrio@correo.example.com"
+    },
+    {
+        
+        "id" : 3,
+        "nombre" : "Josefina Quintero",
+        "fechaNacimiento" : "2001-05-18",
+        "email" : "josefinolis@correo.example.com"
+    },
+    {
+        
+        "id" : 4,
+        "nombre" : "Artemio Gomez",
+        "fechaNacimiento" : "1993-05-23",
+        "email" : "Gamerforlife@correo.example.com"
+    },
+    {
+        
+        "id" : 5,
+        "nombre" : "Saul Mayorga",
+        "fechaNacimiento" : "1997-01-01",
+        "email" : "linuxero@correo.example.com"
+    },
+    {
+        
+        "id" : 6,
+        "nombre" : "Ramon  Valdez como don ramon",
+        "fechaNacimiento" : "1996-01-18",
+        "email" : "DonRamon@correo.example.com"
+    },
+    {
+        
+        "id" : 7,
+        "nombre" : "Florinda Meza",
+        "fechaNacimiento" : "1999-10-11",
+        "email" : "Floridat@correo.example.com"
+    },
+    {
+        
+        "id" : 8,
+        "nombre" : "Ivon Estrada",
+        "fechaNacimiento" : "1994-08-17",
+        "email" : "ivon777@correo.example.com"
+    }
+
+]

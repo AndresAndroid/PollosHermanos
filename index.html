@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+
+    <title>Pollos Hermanos</title>
+</head>
+<body>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Welcome to pollos hermanos</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Buscador" aria-label="Search">
+        <div class="navbar-nav">
+            <div class="nav-item text-nowrap">
+            <a class="nav-link px-3" href="#">Buscar</a>
+        </div>
+        </div>
+    </header>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3 sidebar-sticky">
+                    <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" id="windowOrdenes">
+                        
+                        <i class="bi bi-egg-fried"></i>
+                        Ordenes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="windowProductos">
+                        <i class="bi bi-box"></i>
+                        Productos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="windowEmpleados">
+                        <i class="bi bi-person-rolodex"></i>
+                        Empleados
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="windowClientes">
+                        <i class="bi bi-person-heart"></i>
+                        Clientes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="windowReportes">
+                        <i class="bi bi-files"></i>
+                        Reportes
+                        </a>
+                    </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+                    <span>Carga de Datos</span>
+                    <a class="link-secondary" href="#" aria-label="Add a new report">
+                        <span data-feather="plus-circle" class="align-text-bottom"></span>
+                    </a>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" id="cargarEmpleadosFromFileAwait" href="#">
+                        <i class="bi bi-filetype-json"></i>
+                        Cargar Empleados
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="cargarClientesFromFilePromesa" href="#">
+                        <i class="bi bi-filetype-json" ></i>
+                        Cargar Clientes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="cargarProductosFromFileAwait" href="#">
+                        <i class="bi bi-filetype-json"></i>
+                        Cargar Productos
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!--Seccion dinamica dependiendo de las opciones del sidebar-->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2" id="windowTitulo">Hola!!</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" id="btnAgregarDinamico" class="btn btn-md btn-outline-secondary bi bi-plus-circle-fill " data-bs-toggle="modal" data-bs-target="#miModal">
+                                
+                                    Agregar 
+                                
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <h2 id="title-Seccion-tabla">Bienvenido...</h2>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm" id="showInformacionTabla">
+
+
+                    </table>
+                </div>
+
+                
+                <div class="row" id="divOrdenesCards">   
+                </div>
+
+            </main>
+
+            <div class="row">
+                <div class="col-12">
+                    <!-- Seccion de Modales "Los modales hacen a los caballeros"-->
+                    <div class="modal fade" id="ModalOrdenForm" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-primary" id="exampleModalLabel">Datos de la Orden</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="empleadosDataList" class="form-label">Empleado</label>
+                                            <input class="form-control" list="empleadoDatalistOptions" id="empleadosDataList" placeholder="Buscar">
+                                            <datalist id="empleadoDatalistOptions">
+                                            </datalist>
+                                        </div><div class="form-group">
+                                            <label for="clienteDataList" class="form-label">Cliente</label>
+                                            <input class="form-control" list="clienteDatalistOptions" id="clienteDataList" placeholder="Buscar">
+                                            <datalist id="clienteDatalistOptions">
+                                            </datalist>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="productoDataList" class="form-label">Producto</label>
+                                            <input class="form-control" list="productoDatalistOptions" id="productoDataList" placeholder="Buscar">
+                                            <datalist id="productoDatalistOptions">
+                                            </datalist>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="btnRegistrarOrden" type="button" class="btn btn-success" data-dismiss="modal">Registrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="ModalProductoForm" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-primary" id="exampleModalLabel">Datos de producto</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="nombre">Nombre</label>
+                                            <input type="text" class="form-control" id="nombreProducto" 
+                                            aria-describedby="Nombre del estudiante" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Precio" class="mr-3">Precio</label>
+                                            <input type="number" class="form-control" id="precioProducto"  value="0">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="motivo" class="mr-3">Descripciòn</label>
+                                            <textarea class="form-control" id="descripcionProducto" rows="3"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="btnRegistrarProducto" type="button" class="btn btn-success" data-dismiss="modal">Registrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="ModalEmpleadoForm" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-primary" id="exampleModalLabel">Datos del empleado</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="nombreEmpleado">Nombre</label>
+                                            <input type="text" class="form-control" id="nombreEmpleado" 
+                                            aria-describedby="Nombre del estudiante" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edadEmpleado" class="mr-3">Edad</label>
+                                            <input type="number" class="form-control" id="edadEmpleado" min="18" max="50" value="18">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="fechaNacimientoEmpleado" class="mr-3">Fecha de Nacimiento</label>
+                                            <input type="date" class="form-control" id="fechaNacimientoEmpleado">
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <label>Sexo</label><br>
+                                            <input type="radio" class="form-check-input" id="sexoMasculino" name='sexo' checked>
+                                            <label class="form-check-label" for="sexoMasculino">Masculino</label><br>
+                                            <input type="radio" class="form-check-input" id="sexoFememino" name='sexo'>
+                                            <label class="form-check-label" for="sexoFemenino">Femenino</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="emailHelp">Correo electronico</label>
+                                            <input type="email" class="form-control" id="emailEmpleado" 
+                                            aria-describedby="emailHelp" value="">
+                                            <small id="emailHelp" class="form-text text-muted">No compartas tu correo con nadie mas</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="actividadEmpleado" class="mr-3">Actividades que desempeña</label>
+                                            <textarea class="form-control" id="actividadEmpleado" rows="3"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="btnRegistrarEmpleado" type="button" class="btn btn-success" data-dismiss="modal">Registrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="ModalClienteForm" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-primary" id="exampleModalLabel">Datos del cliente</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="nombre">Nombre Completo</label>
+                                            <input type="text" class="form-control" id="nombreCliente" 
+                                            aria-describedby="Nombre del Cliente" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="fechaNacimiento" class="mr-3">Fecha de Nacimiento</label>
+                                            <input type="date" class="form-control" id="fechaNacimientoCliente">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Correo electronico</label>
+                                            <input type="email" class="form-control" id="emailCliente" 
+                                            aria-describedby="emailHelp" value="">
+                                            <small id="emailHelp" class="form-text text-muted">No compartas tu correo con nadie mas</small>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="btnRegistrarCliente" type="button" class="btn btn-success" data-dismiss="modal">Registrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <script src="dist/js/bootstrap.bundle.js"></script>
+    <script src="lib/eventosSideBar.js"></script>
+
+</body>
+</html>
